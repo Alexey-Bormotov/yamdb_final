@@ -13,22 +13,18 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet
 from rest_framework_simplejwt.views import TokenViewBase
+from reviews.models import Category, Genre, Review, Title
 
 from api_yamdb import settings
-from reviews.models import Category, Genre, Title, Review
+
 from .filters import TitlesFilter
 from .mixins import CategoryGenreViewSet, TitleReviewCommentViewSet
-from .permissions import (IsAuthorPermission,
-                          IsAdminPermission,
+from .permissions import (IsAdminPermission, IsAuthorPermission,
                           IsReadOnlyPermission)
-from .serializers import (CategoriesSerializer,
-                          GenresSerializer,
-                          TitlesSerializer,
-                          TitlesCreateUpdateSerializer,
-                          CommentSerializer,
-                          ReviewSerializer,
-                          TokenObtainPairSerializer,
-                          UserSerializer,
+from .serializers import (CategoriesSerializer, CommentSerializer,
+                          GenresSerializer, ReviewSerializer,
+                          TitlesCreateUpdateSerializer, TitlesSerializer,
+                          TokenObtainPairSerializer, UserSerializer,
                           UserSignUpSerializer)
 
 

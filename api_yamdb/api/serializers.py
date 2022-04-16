@@ -5,10 +5,7 @@ from rest_framework import serializers
 from rest_framework.generics import get_object_or_404
 from rest_framework.validators import UniqueValidator
 from rest_framework_simplejwt.tokens import RefreshToken
-
-from reviews.models import (
-    Category, Genre, Title, GenreTitle,
-    Comment, Review)
+from reviews.models import Category, Comment, Genre, GenreTitle, Review, Title
 
 
 class TokenObtainPairSerializer(serializers.Serializer):

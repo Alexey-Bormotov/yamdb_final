@@ -2,8 +2,7 @@ from rest_framework import mixins, viewsets
 from rest_framework.filters import SearchFilter
 from rest_framework.pagination import PageNumberPagination
 
-from .permissions import (IsAdminPermission,
-                          IsReadOnlyPermission)
+from .permissions import IsAdminPermission, IsReadOnlyPermission
 
 
 class CategoryGenreViewSet(mixins.ListModelMixin, mixins.CreateModelMixin,
