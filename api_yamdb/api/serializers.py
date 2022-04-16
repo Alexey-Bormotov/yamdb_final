@@ -21,8 +21,8 @@ class TokenObtainPairSerializer(serializers.Serializer):
                 'Некорректный код подтверждения'
             )
         refresh = RefreshToken.for_user(user)
-        data = {'access_token': str(refresh.access_token)}
-        return data
+
+        return {'access_token': str(refresh.access_token)}
 
 
 class UserSignUpSerializer(serializers.ModelSerializer):
@@ -155,9 +155,7 @@ class ReviewSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError(
                 'Нельзя оставить больше одного обзора.')
 
-        review = Review.objects.create(**validated_data,)
-
-        return review
+        return Review.objects.create(**validated_data,)
 
     class Meta:
         model = Review
