@@ -1,4 +1,4 @@
-name: yamdb workflow
+name: yamdb_workflow
 
 on: [push]
 
@@ -64,7 +64,7 @@ jobs:
         script: |
           sudo docker-compose pull diablik666/yamdb
           sudo docker-compose stop
-          sudo docker-compose rm infra_web_1
+          sudo docker-compose rm di-devil-vm_web_1
           touch .env
           echo DB_ENGINE=${{ secrets.DB_ENGINE }} >> .env
           echo DB_NAME=${{ secrets.DB_NAME }} >> .env
