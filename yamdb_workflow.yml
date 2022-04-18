@@ -1,4 +1,4 @@
-name: yamdb workflow
+name: yamdb_workflow
 
 on: [push]
 
@@ -47,6 +47,7 @@ jobs:
         with:
           push: true
           tags: diablik666/yamdb
+          file: api_yamdb/Dockerfile
 
   deploy:
     name: Deploy on Yandex.Cloud
@@ -61,9 +62,9 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         passphrase: ${{ secrets.PASSPHRASE }}
         script: |
-          sudo docker-compose pull didevil666/yamdb
+          sudo docker-compose pull diablik666/yamdb
           sudo docker-compose stop
-          sudo docker-compose rm web
+          sudo docker-compose rm -f web
           touch .env
           echo DB_ENGINE=${{ secrets.DB_ENGINE }} >> .env
           echo DB_NAME=${{ secrets.DB_NAME }} >> .env
