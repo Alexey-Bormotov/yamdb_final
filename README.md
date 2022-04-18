@@ -1,4 +1,4 @@
-![yamdb_workflow](https://github.com/DIABLik666/yamdb_final/actions/workflows/yamdb_workflow/badge.svg)
+![yamdb_workflow](https://github.com/DIABLik666/yamdb_final/workflows/yamdb_workflow/badge.svg)
 
 # Проект «api_yamdb» в контейнерах
 
